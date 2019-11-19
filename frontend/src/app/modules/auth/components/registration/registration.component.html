@@ -1,0 +1,49 @@
+<div class="authenticate">
+    <div class="authenticate__box">
+        <h1 class="authenticate__title">Впервые в нашем приложении?</h1>
+        <h2 class="authenticate__subtitle">Зарегистрируйтесь</h2>
+        <form class="form" [formGroup]="formRegistration">
+            <div class="form__control">
+                <input type="text" class="form__item" placeholder="Ваше имя" formControlName="firstName" required>
+                <div class="error" *ngIf="formRegistration.controls['firstName'].errors && !formRegistration.controls['firstName'].pristine">
+                    <span class="error__text" *ngIf="formRegistration.controls['firstName'].errors.required">
+                        Имя обязательно</span>
+                </div>
+            </div>
+            <div class="form__control">
+                <input type="text" class="form__item" placeholder="Ваша фамилия" formControlName="lastName" 
+                required>
+            </div>
+            <div class="form__control">
+                <input type="email" class="form__item" placeholder="Электронная почта" formControlName="email" 
+                required>
+            </div>
+            <div class="form__control">
+                <input type="password" class="form__item" placeholder="Пароль" formControlName="password" 
+                required minlength="5">
+            </div>
+            <div class="form__group">
+                <input class="form__item form__item--small" type="number" placeholder="День" 
+                formControlName="dayBirth" required min="1" max="31">
+                <select class="form__item form__item--small" required formControlName="monthBirth">
+                    <option value="Январь">Январь</option>
+                    <option>Февраль</option>
+                    <option>Март</option>
+                    <option>Апрель</option>
+                    <option>Май</option>
+                    <option>Июнь</option>
+                    <option>Июль</option>
+                    <option>Август</option>
+                    <option>Сентябрь</option>
+                    <option>Октябрь</option>
+                    <option>Ноябрь</option>
+                    <option>Декабрь</option>
+                </select>
+                <input class="form__item form__item--small" type="number" placeholder="Год" 
+                formControlName="yearBirth" required min="1915" max="2005">
+            </div>
+            <button type="submit" class="button form__button" (click)="register()"
+            [disabled]="!formRegistration.valid">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>

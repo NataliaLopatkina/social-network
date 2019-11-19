@@ -1,0 +1,15 @@
+.not-found {
+    background: #35CBC9;
+    color: #ffffff;
+    padding-top: 50px;
+    height: calc(100vh - 50px);
+    text-align: center;
+
+    &__title {
+        font-size: 100px;
+    }
+
+    &__subtitle {
+        font-size: 50px;
+    }
+}
