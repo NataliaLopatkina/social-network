@@ -2,29 +2,52 @@
     <div class="authenticate__box">
         <h1 class="authenticate__title">Впервые в нашем приложении?</h1>
         <h2 class="authenticate__subtitle">Зарегистрируйтесь</h2>
-        <form class="form" [formGroup]="formRegistration">
+        <form class="form authenticate__form" [formGroup]="formRegistration">
             <div class="form__control">
-                <input type="text" class="form__item" placeholder="Ваше имя" formControlName="firstName" required>
-                <div class="error" *ngIf="formRegistration.controls['firstName'].errors && !formRegistration.controls['firstName'].pristine">
+                <label for="firstName" class="form__label">Имя
+                    <span class="form__required">*</span>
+                </label>
+                <input type="text" id="firstName" class="form__item" placeholder="Ваше имя" formControlName="firstName"
+                    required>
+                <div class="error"
+                    *ngIf="formRegistration.controls['firstName'].errors && !formRegistration.controls['firstName'].pristine">
                     <span class="error__text" *ngIf="formRegistration.controls['firstName'].errors.required">
-                        Имя обязательно</span>
+                        Это полу обязательно</span>
                 </div>
             </div>
             <div class="form__control">
-                <input type="text" class="form__item" placeholder="Ваша фамилия" formControlName="lastName" 
-                required>
+                <label for="lastName" class="form__label">Фамилия
+                    <span class="form__required">*</span>
+                </label>
+                <input type="text" id="lastName" class="form__item" placeholder="Ваша фамилия"
+                    formControlName="lastName" required>
+                <div class="error"
+                    *ngIf="formRegistration.controls['firstName'].errors && !formRegistration.controls['firstName'].pristine">
+                    <span class="error__text" *ngIf="formRegistration.controls['firstName'].errors.required">
+                        Это поле обязательно</span>
+                </div>
             </div>
             <div class="form__control">
-                <input type="email" class="form__item" placeholder="Электронная почта" formControlName="email" 
-                required>
+                <label for="email" class="form__label">Электронная почта</label>
+                <span class="form__required">*</span>
+                <input type="email" id="email" class="form__item" placeholder="Электронная почта"
+                    formControlName="email" required>
+                <div class="error"
+                    *ngIf="formRegistration.controls['firstName'].errors && !formRegistration.controls['firstName'].pristine">
+                    <span class="error__text" *ngIf="formRegistration.controls['firstName'].errors.required">
+                        Это поле обязательно</span>
+                </div>
             </div>
             <div class="form__control">
-                <input type="password" class="form__item" placeholder="Пароль" formControlName="password" 
-                required minlength="5">
+                <label for="password" class="form__label">Пароль
+                    <span class="form__required">*</span>
+                </label>
+                <input type="password" id="password" class="form__item" placeholder="Пароль" formControlName="password"
+                    required minlength="5">
             </div>
             <div class="form__group">
-                <input class="form__item form__item--small" type="number" placeholder="День" 
-                formControlName="dayBirth" required min="1" max="31">
+                <input class="form__item form__item--small" type="number" placeholder="День" formControlName="dayBirth"
+                    required min="1" max="31">
                 <select class="form__item form__item--small" required formControlName="monthBirth">
                     <option value="Январь">Январь</option>
                     <option>Февраль</option>
@@ -39,11 +62,15 @@
                     <option>Ноябрь</option>
                     <option>Декабрь</option>
                 </select>
-                <input class="form__item form__item--small" type="number" placeholder="Год" 
-                formControlName="yearBirth" required min="1915" max="2005">
+                <input class="form__item form__item--small" type="number" placeholder="Год" formControlName="yearBirth"
+                    required min="1915" max="2005">
             </div>
             <button type="submit" class="button form__button" (click)="register()"
-            [disabled]="!formRegistration.valid">Зарегистрироваться</button>
+                [disabled]="!formRegistration.valid">Зарегистрироваться</button>
         </form>
+        <div class="authenticate__explanation">
+            <span class="authenticate__required">*</span> поля обязательные для заполнения
+        </div>
+        <a class="authenticate__link" routerLink="/auth/login">Есть аккаунт? Воспользуйтесь входом</a>
     </div>
 </div>

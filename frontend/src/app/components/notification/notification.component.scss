@@ -1,0 +1,23 @@
+.notification {
+    max-width: 400px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: red;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--info {
+        background: green;
+    }
+
+    &__text {
+        font-size: 16px;
+        color: #ffffff;
+    }
+}

@@ -420,6 +420,29 @@ a {
         text-align: center;
         margin-bottom: 10px;
     }
+
+    &__form {
+        margin-bottom: 10px;
+    }
+
+    &__explanation {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    &__required {
+        font-size: 16px;
+        color: red;
+    }
+
+    &__link {
+        font-size: 16px;
+        color: #35CBC9;
+        text-decoration: underline;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 .form {
@@ -428,6 +451,16 @@ a {
 
     &__control {
         margin-bottom: 10px;
+    }
+    
+    &__label {
+        font-size: 16px;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    &__required {
+        color: red;
     }
 
     &__item {
@@ -453,6 +486,7 @@ a {
     &__group {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 10px;
     }
 
     &__item--small {

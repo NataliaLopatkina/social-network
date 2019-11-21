@@ -1,11 +1,25 @@
 <div class="authenticate">
     <div class="authenticate__box">
         <h1 class="authenticate__title">Вход в приложение</h1>
-        <form class="form">
-            <input type="email" class="form__item" placeholder="Электронная почта" required>
-            <input type="password" class="form__item" placeholder="Пароль" required minlength="5">
+        <form class="form authenticate__form">
+            <div class="form__control">
+                <label for="email" class="form__label">Электронная почта
+                    <span class="form__required">*</span>
+                </label>
+                <input type="email" id="email" class="form__item" placeholder="Электронная почта" required>
+            </div>
+            <div class="form__control">
+                <label for="password" class="form__label">Пароль
+                    <span class="form__required">*</span>
+                </label>
+                <input type="text" id="password" class="form__item" placeholder="Пароль" required minlength="5">
+            </div>
             <button type="submit" class="button form__button">Войти</button>
         </form>
+        <div class="authenticate__explanation">
+            <span class="authenticate__required">*</span> поля обязательные для заполнения
+        </div>
+        <a class="authenticate__link" routerLink="/auth/registration">Нет аккаунта? Зарегистрируйтесь</a>
     </div>
 </div>
 
