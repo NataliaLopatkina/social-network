@@ -6,11 +6,13 @@ import { AuthRoutingModule } from './auth-routing.module';
 
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
+import { NotificationComponent } from '../../components/notification/notification.component';
 
 @NgModule({
     declarations: [
         RegistrationComponent,
-        LoginComponent
+        LoginComponent,
+        NotificationComponent
     ],
     imports: [
         CommonModule,

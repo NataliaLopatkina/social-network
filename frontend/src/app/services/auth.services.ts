@@ -14,4 +14,9 @@ export class AuthService {
     public registration(user: User) {
         return this.httpClient.post(environment.baseUrl + 'registration', user)
     }
+
+    public login(user) {
+        const userData = { email: user.email, password: user.password }
+        return this.httpClient.post(environment.baseUrl + 'login', userData)
+    }
 }

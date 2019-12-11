@@ -9,14 +9,16 @@ import { AuthModule } from './modules/auth/auth.module';
 
 import { MainComponent } from './components/main/main.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { NotificationComponent } from './components/notification/notification.component';
+import { HomeComponent } from './components/home/home.component';
+
+import { NotificationService } from './services/notification.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     NotFoundComponent,
-    NotificationComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,9 @@ import { NotificationComponent } from './components/notification/notification.co
     AppRoutingModule,
     AuthModule
   ],
-  providers: [],
+  providers: [
+      NotificationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

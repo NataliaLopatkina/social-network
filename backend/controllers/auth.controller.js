@@ -21,3 +21,23 @@ exports.registration = async function (req, res, next) {
         return res.status(403).json({ message: e.message })
     }
 }
+
+exports.login = async function(req, res, next) {
+    console.log(req.body)
+    const { email, password } = req.body;
+    const hash = crypto.createHash('md5').update(password).digest("hex");
+
+    try {
+        const user = await userService.getUser({ where: { email: email, password:  hash}});
+
+        if (user) {
+            return res.status(200).json({ message: 'Пользователь найден!' })
+        }
+
+        throw new Error('Некорректный логин или пароль!')
+    }
+
+    catch(e) {
+        return res.status(404).json({ message: e.message })
+    }
+}
