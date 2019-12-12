@@ -12,6 +12,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { NotificationService } from './services/notification.service';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NotificationService } from './services/notification.service';
     MainComponent,
     NotFoundComponent,
     HomeComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

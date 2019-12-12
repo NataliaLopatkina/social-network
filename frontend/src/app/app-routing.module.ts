@@ -5,13 +5,15 @@ import { MainComponent } from './components/main/main.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 
+import { AuthGuard } from './guards/auth.guards';
+
 export const routes: Routes = [
     {
         path: '', component: MainComponent,
     },
 
     {
-        path: 'home', component: HomeComponent,
+        path: 'home/:email', component: HomeComponent, canActivate: [ AuthGuard ]
     },
 
     {

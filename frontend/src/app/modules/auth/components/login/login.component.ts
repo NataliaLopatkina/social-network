@@ -28,11 +28,11 @@ export class LoginComponent implements OnInit {
     }
 
     login() {
-        const userData = { email: this.formLogin.value.email, password: this.formLogin.value.password }
-        this.subscription = this.authService.login(userData)
+        const user = { email: this.formLogin.value.email, password: this.formLogin.value.password }
+        this.subscription = this.authService.login(user)
         .subscribe(
             (response)=> {
-                this.router.navigate(['/home'])
+                this.router.navigate(['home/' + user.email])
             },
 
             (error)=> {

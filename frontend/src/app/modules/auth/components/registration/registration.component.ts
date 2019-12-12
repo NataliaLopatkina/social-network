@@ -2,6 +2,7 @@ import { Subscription } from 'rxjs';
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../../../../services/auth.services';
  
@@ -18,8 +19,8 @@ export class RegistrationComponent implements OnInit {
 
     constructor(
         private fb: FormBuilder,
-        private authService: AuthService
-        ) { }
+        private authService: AuthService,
+        private router: Router) { }
 
     ngOnInit() {
         this.initFormRegistration();
@@ -42,7 +43,7 @@ export class RegistrationComponent implements OnInit {
         this.subscription = this.authService.registration(user)
             .subscribe(
                 (response: any) => {
-                    console.log(response)
+                    this.router.navigate(['home/' + user.email])
                 },
 
                 (error) => {

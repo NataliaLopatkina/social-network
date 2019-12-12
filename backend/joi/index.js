@@ -1,5 +1,7 @@
-const { registrationSchema } = require('./registration-schema');
+const registrationSchema = require('./registration-schema');
+const loginSchema = require('./login-schema');
 
 module.exports = {
-    registrationSchema
+    registrationSchema,
+    loginSchema
 }
