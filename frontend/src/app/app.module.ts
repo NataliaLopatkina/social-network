@@ -13,6 +13,10 @@ import { HomeComponent } from './components/home/home.component';
 
 import { NotificationService } from './services/notification.service';
 import { HeaderComponent } from './components/header/header.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { NavComponent } from './components/nav/nav.component';
+import { PhotoComponent } from './components/photo/photo.component';
+import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { HeaderComponent } from './components/header/header.component';
     NotFoundComponent,
     HomeComponent,
     HeaderComponent,
+    ProfileComponent,
+    NavComponent,
+    PhotoComponent,
+    ProfileInfoComponent,
   ],
   imports: [
     BrowserModule,

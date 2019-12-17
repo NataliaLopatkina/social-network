@@ -504,19 +504,21 @@ a {
     font-weight: 600;
     line-height: calc(20 / 16);
     color: #ffffff;
-    border: none;
     background: #35CBC9;
     border-radius: 3px;
     border: 2px solid #35CBC9;
     padding: 7px 10px;
+    display: block;
     transition: background 0.25s ease;
 
     &:hover {
         background: #35C4CB;
+        border: 2px solid #35C4CB;
     }
 
     &:active {
         background: #35B7CB;
+        border: 2px solid #35B7CB;
     }
 
     &:focus {

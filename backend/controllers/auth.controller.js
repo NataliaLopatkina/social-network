@@ -45,21 +45,3 @@ exports.login = async function(req, res, next) {
         return res.status(404).json({ message: e.message })
     }
 }
-
-exports.getUser = async function(req, res, next) {
-    const { email } = req.body;
-
-    try {
-        const user = await userService.getUser({ where: { email: email } })
-
-        if(user) {
-            return res.status(200).json({ user })
-        }
-
-        throw new Error('Пользователь не найден!')
-    }
-
-    catch(e) {
-        return res.status(400).json({message: e.message})
-    }
-}

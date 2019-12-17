@@ -12,7 +12,6 @@ import { environment } from '../../environments/environment';
 export class AuthService {
 
     isAuth: boolean = false;
-    user = new Subject();
 
     constructor(private httpClient: HttpClient) { }
 
@@ -29,8 +28,8 @@ export class AuthService {
         return this.httpClient.post<any>(environment.baseUrl + 'login', userData)
         .pipe(map(response => {
             localStorage.setItem('token', response.token);
+            localStorage.setItem('user', JSON.stringify(response.user));
             this.isAuth = true;
-            this.user.next(response.user);
         }))
     }
 
@@ -38,8 +37,7 @@ export class AuthService {
         return localStorage.getItem('token')
     }
 
-    public getUserData(email) {
-        const params = email;
-        return this.httpClient.get(environment.baseUrl + 'user', {params});
+    public getUser() {
+        return JSON.parse(localStorage.getItem('user'));
     }
 }
