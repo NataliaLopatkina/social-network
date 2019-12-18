@@ -11,7 +11,18 @@
         margin-bottom: 15px;
     }
 
+    &__file {
+        opacity: 0;
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        z-index: -1;
+    }
+
     &__button {
+        max-width: 200px;
         margin: 0 auto;
+        cursor: pointer;
     }
 }

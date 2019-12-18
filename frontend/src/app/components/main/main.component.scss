@@ -5,7 +5,8 @@
     background: #35CBC9;
 
     &__actions {
-        text-align: right;
+        display: flex;
+        justify-content: flex-end;
         padding-right: 30px;
         margin-bottom: 10px;
     }
